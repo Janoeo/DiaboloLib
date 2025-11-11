@@ -1,3 +1,7 @@
+### 10.1.2
+
+- Fix hoe recipe
+
 ### 10.1.1
 
 - Fix an issue with a custom recipe name

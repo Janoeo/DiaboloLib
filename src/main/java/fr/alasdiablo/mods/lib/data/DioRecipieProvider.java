@@ -185,7 +185,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 );
         this.shaped(RecipeCategory.TOOLS, hoe)
                 .define('S', Items.STICK)
-                .define('M', ItemTags.IRON_TOOL_MATERIALS)
+                .define('M', material)
                 .pattern("MM")
                 .pattern(" S")
                 .pattern(" S")
@@ -275,7 +275,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 );
         this.shaped(RecipeCategory.TOOLS, hoe)
                 .define('S', Items.STICK)
-                .define('M', ItemTags.IRON_TOOL_MATERIALS)
+                .define('M', material)
                 .pattern("MM")
                 .pattern(" S")
                 .pattern(" S")
