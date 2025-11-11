@@ -1,3 +1,7 @@
+### 10.1.0
+
+- Add Custom Recipe Provider
+
 ### 10.0.0
 
 - Update to mc 1.21.8
