@@ -177,7 +177,12 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .pattern("MS")
                 .pattern(" S")
                 .unlockedBy(hasName, this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(axe)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.TOOLS, hoe)
                 .define('S', Items.STICK)
                 .define('M', ItemTags.IRON_TOOL_MATERIALS)
@@ -185,7 +190,12 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .pattern(" S")
                 .pattern(" S")
                 .unlockedBy(hasName, this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(hoe)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.TOOLS, pickaxe)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -193,7 +203,12 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .pattern(" S ")
                 .pattern(" S ")
                 .unlockedBy(hasName, this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(pickaxe)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.TOOLS, shovel)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -201,7 +216,12 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .pattern("S")
                 .pattern("S")
                 .unlockedBy(hasName, this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(shovel)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.COMBAT, sword)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -209,7 +229,12 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .pattern("M")
                 .pattern("S")
                 .unlockedBy(hasName, this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(sword)
+                        ).toString()
+                );
     }
 
     /**
@@ -242,7 +267,12 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .pattern("MS")
                 .pattern(" S")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(axe)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.TOOLS, hoe)
                 .define('S', Items.STICK)
                 .define('M', ItemTags.IRON_TOOL_MATERIALS)
@@ -250,7 +280,12 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .pattern(" S")
                 .pattern(" S")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(hoe)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.TOOLS, pickaxe)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -258,7 +293,12 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .pattern(" S ")
                 .pattern(" S ")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(pickaxe)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.TOOLS, shovel)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -266,7 +306,12 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .pattern("S")
                 .pattern("S")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(shovel)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.COMBAT, sword)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -274,7 +319,12 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .pattern("M")
                 .pattern("S")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(sword)
+                        ).toString()
+                );
     }
 
     /**
@@ -302,27 +352,47 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .pattern("MMM")
                 .pattern("M M")
                 .unlockedBy(hasName, this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(helmet)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.COMBAT, chestplate)
                 .define('M', material)
                 .pattern("M M")
                 .pattern("MMM")
                 .pattern("MMM")
                 .unlockedBy(hasName, this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(chestplate)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.COMBAT, leggings)
                 .define('M', material)
                 .pattern("MMM")
                 .pattern("M M")
                 .pattern("M M")
                 .unlockedBy(hasName, this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(leggings)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.COMBAT, boots)
                 .define('M', material)
                 .pattern("M M")
                 .pattern("M M")
                 .unlockedBy(hasName, this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(boots)
+                        ).toString()
+                );
     }
 
     /**
@@ -348,26 +418,46 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .pattern("MMM")
                 .pattern("M M")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(helmet)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.COMBAT, chestplate)
                 .define('M', material)
                 .pattern("M M")
                 .pattern("MMM")
                 .pattern("MMM")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(chestplate)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.COMBAT, leggings)
                 .define('M', material)
                 .pattern("MMM")
                 .pattern("M M")
                 .pattern("M M")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(leggings)
+                        ).toString()
+                );
         this.shaped(RecipeCategory.COMBAT, boots)
                 .define('M', material)
                 .pattern("M M")
                 .pattern("M M")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(this.output);
+                .save(
+                        this.output,
+                        ResourceLocation.fromNamespaceAndPath(
+                                this.modId, getItemName(boots)
+                        ).toString()
+                );
     }
 }

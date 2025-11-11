@@ -1,3 +1,7 @@
+### 10.1.1
+
+- Fix an issue with a custom recipe name
+
 ### 10.1.0
 
 - Add Custom Recipe Provider
