@@ -1,3 +1,7 @@
+### 11.0.0
+
+- Update to mc 26.2
+
 ### 10.1.2
 
 - Fix hoe recipe
