@@ -1,10 +1,5 @@
 package fr.alasdiablo.mods.lib.block;
 
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FireBlock;
-import org.jetbrains.annotations.NotNull;
-
 /**
  * Helper class providing utility methods and constants for working with Minecraft blocks.
  * This class includes functionality for fire mechanics, block stripping, and particle effects.
@@ -145,22 +140,22 @@ public class BlockHelper {
      */
     public static final int CARPET_FLAMMABILITY = 20;
 
-    /**
-     * Instance of the FireBlock used for managing block flammability
-     */
-    private static final FireBlock fireBlock = (FireBlock) Blocks.FIRE;
-
-    /**
-     * Sets custom flammability properties for a specified block.
-     * This method configures how easily a block catches fire and how quickly it burns.
-     *
-     * @param block         The target blocks to modify flammability properties
-     * @param encouragement The likelihood of the block catching fire (higher values mean easier ignition)
-     * @param flammability  The rate at which the block burns once ignited (higher values mean faster burning)
-     * @return The modified block instance
-     */
-    public static Block setFlammability(@NotNull Block block, int encouragement, int flammability) {
-        fireBlock.setFlammable(block, encouragement, flammability);
-        return block;
-    }
+//    /**
+//     * Instance of the FireBlock used for managing block flammability
+//     */
+//    private static final FireBlock fireBlock = (FireBlock) Blocks.FIRE;
+//
+//    /**
+//     * Sets custom flammability properties for a specified block.
+//     * This method configures how easily a block catches fire and how quickly it burns.
+//     *
+//     * @param block         The target blocks to modify flammability properties
+//     * @param encouragement The likelihood of the block catching fire (higher values mean easier ignition)
+//     * @param flammability  The rate at which the block burns once ignited (higher values mean faster burning)
+//     * @return The modified block instance
+//     */
+//    public static Block setFlammability(@NotNull Block block, int encouragement, int flammability) {
+//        fireBlock.setFlammable(block, encouragement, flammability);
+//        return block;
+//    }
 }

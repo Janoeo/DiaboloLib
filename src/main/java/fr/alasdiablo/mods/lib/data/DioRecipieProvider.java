@@ -6,15 +6,12 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.BlastingRecipe;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.SmeltingRecipe;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.NotNull;
 
@@ -75,22 +72,22 @@ public abstract class DioRecipieProvider extends RecipeProvider {
      * @param group      The recipe group name for organising related recipes in the recipe book
      */
     protected void oreCooking(@NotNull ItemLike ingredient, @NotNull ItemLike result, float experience, String group) {
-        SimpleCookingRecipeBuilder.generic(Ingredient.of(ingredient), RecipeCategory.MISC, result, experience, 200, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new)
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), RecipeCategory.MISC, CookingBookCategory.BLOCKS, result, experience, 200)
                 .group(group)
                 .unlockedBy(getHasName(ingredient), this.has(ingredient))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId,
                                 getItemName(result) + "_from_smelting_" + getItemName(ingredient)).toString()
                 );
 
-        SimpleCookingRecipeBuilder.generic(Ingredient.of(ingredient), RecipeCategory.MISC, result, experience, 100, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new)
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ingredient), RecipeCategory.MISC, CookingBookCategory.BLOCKS, result, experience, 100)
                 .group(group)
                 .unlockedBy(getHasName(ingredient), this.has(ingredient))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId,
                                 getItemName(result) + "_from_blasting_" + getItemName(ingredient)
                         ).toString()
@@ -126,7 +123,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(getHasName(packed), this.has(packed))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(unpacked) + "_from_ingot"
                         ).toString()
                 );
@@ -139,7 +136,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(getHasName(unpacked), this.has(unpacked))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(packed) + "_from_nuggets"
                         ).toString()
                 );
@@ -179,7 +176,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(hasName, this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(axe)
                         ).toString()
                 );
@@ -192,7 +189,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(hasName, this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(hoe)
                         ).toString()
                 );
@@ -205,7 +202,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(hasName, this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(pickaxe)
                         ).toString()
                 );
@@ -218,7 +215,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(hasName, this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(shovel)
                         ).toString()
                 );
@@ -231,7 +228,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(hasName, this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(sword)
                         ).toString()
                 );
@@ -269,7 +266,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(getHasName(material), this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(axe)
                         ).toString()
                 );
@@ -282,7 +279,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(getHasName(material), this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(hoe)
                         ).toString()
                 );
@@ -295,7 +292,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(getHasName(material), this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(pickaxe)
                         ).toString()
                 );
@@ -308,7 +305,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(getHasName(material), this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(shovel)
                         ).toString()
                 );
@@ -321,7 +318,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(getHasName(material), this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(sword)
                         ).toString()
                 );
@@ -354,7 +351,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(hasName, this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(helmet)
                         ).toString()
                 );
@@ -366,7 +363,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(hasName, this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(chestplate)
                         ).toString()
                 );
@@ -378,7 +375,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(hasName, this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(leggings)
                         ).toString()
                 );
@@ -389,7 +386,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(hasName, this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(boots)
                         ).toString()
                 );
@@ -420,7 +417,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(getHasName(material), this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(helmet)
                         ).toString()
                 );
@@ -432,7 +429,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(getHasName(material), this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(chestplate)
                         ).toString()
                 );
@@ -444,7 +441,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(getHasName(material), this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(leggings)
                         ).toString()
                 );
@@ -455,7 +452,7 @@ public abstract class DioRecipieProvider extends RecipeProvider {
                 .unlockedBy(getHasName(material), this.has(material))
                 .save(
                         this.output,
-                        ResourceLocation.fromNamespaceAndPath(
+                        Identifier.fromNamespaceAndPath(
                                 this.modId, getItemName(boots)
                         ).toString()
                 );
