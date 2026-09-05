@@ -8,13 +8,10 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.ModContainer;
 
-// The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(DioLib.MOD_ID)
-public class DioLib {
-    // Define mod id in a common place for everything to reference
+@Mod(Lib.MOD_ID)
+public class Lib {
     public static final String MOD_ID = "dio_lib";
-    // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public DioLib(IEventBus modEventBus, ModContainer modContainer) {}
+    public Lib(IEventBus modEventBus, ModContainer modContainer) {}
 }

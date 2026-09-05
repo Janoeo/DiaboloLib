@@ -1,3 +1,11 @@
+### 12.0.0
+
+#### New API Features
+
+- Add Mutable Pressure Plate block
+- Add ArmorItem item set (helmet, chestplate, leggings, boots) with utility functions
+- Add a fall damage reduction calculation tool
+
 ### 11.0.0
 
 - Update to mc 26.2

@@ -1,6 +1,6 @@
 package fr.alasdiablo.mods.lib.item;
 
-import fr.alasdiablo.mods.lib.DioLib;
+import fr.alasdiablo.mods.lib.Lib;
 import fr.alasdiablo.mods.lib.utils.DateRange;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
@@ -14,20 +14,20 @@ public class GroundCreativeModeTab {
     public static CreativeModeTab.@NotNull Builder createBaseBuilder(CreativeModeTab.@NotNull Builder builder) {
         if (DateRange.IS_WINTER) {
             builder.backgroundTexture(
-                    Identifier.fromNamespaceAndPath(DioLib.MOD_ID, "textures/gui/container/creative_inventory/ground_winter.png")
+                    Identifier.fromNamespaceAndPath(Lib.MOD_ID, "textures/gui/container/creative_inventory/ground_winter.png")
             );
             return builder;
         }
 
         if (DateRange.IS_APRIL_FIRST) {
             builder.backgroundTexture(
-                    Identifier.fromNamespaceAndPath(DioLib.MOD_ID, "textures/gui/container/creative_inventory/ground_april.png")
+                    Identifier.fromNamespaceAndPath(Lib.MOD_ID, "textures/gui/container/creative_inventory/ground_april.png")
             );
             return builder;
         }
 
         builder.backgroundTexture(
-                Identifier.fromNamespaceAndPath(DioLib.MOD_ID, "textures/gui/container/creative_inventory/ground.png")
+                Identifier.fromNamespaceAndPath(Lib.MOD_ID, "textures/gui/container/creative_inventory/ground.png")
         );
         return builder;
     }
