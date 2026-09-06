@@ -175,12 +175,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .pattern("MS")
                 .pattern(" S")
                 .unlockedBy(hasName, this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(axe)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.TOOLS, hoe)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -188,12 +183,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .pattern(" S")
                 .pattern(" S")
                 .unlockedBy(hasName, this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(hoe)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.TOOLS, pickaxe)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -201,12 +191,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .pattern(" S ")
                 .pattern(" S ")
                 .unlockedBy(hasName, this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(pickaxe)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.TOOLS, shovel)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -214,12 +199,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .pattern("S")
                 .pattern("S")
                 .unlockedBy(hasName, this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(shovel)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.COMBAT, sword)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -227,12 +207,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .pattern("M")
                 .pattern("S")
                 .unlockedBy(hasName, this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(sword)
-                        ).toString()
-                );
+                .save(this.output);
     }
 
     /**
@@ -265,12 +240,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .pattern("MS")
                 .pattern(" S")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(axe)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.TOOLS, hoe)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -278,12 +248,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .pattern(" S")
                 .pattern(" S")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(hoe)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.TOOLS, pickaxe)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -291,12 +256,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .pattern(" S ")
                 .pattern(" S ")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(pickaxe)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.TOOLS, shovel)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -304,12 +264,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .pattern("S")
                 .pattern("S")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(shovel)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.COMBAT, sword)
                 .define('S', Items.STICK)
                 .define('M', material)
@@ -317,12 +272,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .pattern("M")
                 .pattern("S")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(sword)
-                        ).toString()
-                );
+                .save(this.output);
     }
 
     /**
@@ -350,47 +300,27 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .pattern("MMM")
                 .pattern("M M")
                 .unlockedBy(hasName, this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(helmet)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.COMBAT, chestplate)
                 .define('M', material)
                 .pattern("M M")
                 .pattern("MMM")
                 .pattern("MMM")
                 .unlockedBy(hasName, this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(chestplate)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.COMBAT, leggings)
                 .define('M', material)
                 .pattern("MMM")
                 .pattern("M M")
                 .pattern("M M")
                 .unlockedBy(hasName, this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(leggings)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.COMBAT, boots)
                 .define('M', material)
                 .pattern("M M")
                 .pattern("M M")
                 .unlockedBy(hasName, this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(boots)
-                        ).toString()
-                );
+                .save(this.output);
     }
 
     /**
@@ -416,47 +346,27 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .pattern("MMM")
                 .pattern("M M")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(helmet)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.COMBAT, chestplate)
                 .define('M', material)
                 .pattern("M M")
                 .pattern("MMM")
                 .pattern("MMM")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(chestplate)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.COMBAT, leggings)
                 .define('M', material)
                 .pattern("MMM")
                 .pattern("M M")
                 .pattern("M M")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(leggings)
-                        ).toString()
-                );
+                .save(this.output);
         this.shaped(RecipeCategory.COMBAT, boots)
                 .define('M', material)
                 .pattern("M M")
                 .pattern("M M")
                 .unlockedBy(getHasName(material), this.has(material))
-                .save(
-                        this.output,
-                        Identifier.fromNamespaceAndPath(
-                                this.modId, getItemName(boots)
-                        ).toString()
-                );
+                .save(this.output);
     }
 
     protected void armors(@NotNull ArmorItem armor, @NotNull TagKey<Item> material) {

@@ -4,11 +4,11 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
 
 public class FallDamageReduction {
-    public static int calculateFallDamage(MobEffectInstance jumpEffect, float distance, float damageMultiplier) {
-        float heightBeforeTakingDamage = 3f;
-        float actualFallingDistance = distance - heightBeforeTakingDamage;
+    public static int calculateFallDamage(MobEffectInstance jumpEffect, double distance, double damageMultiplier) {
+        double heightBeforeTakingDamage = 3d;
+        double actualFallingDistance = distance - heightBeforeTakingDamage;
         if (jumpEffect != null) {
-            float jumpHeight = jumpEffect.getAmplifier() + 1f;
+            double jumpHeight = jumpEffect.getAmplifier() + 1d;
             return Mth.ceil((actualFallingDistance - jumpHeight) * damageMultiplier);
         }
         return Mth.ceil(actualFallingDistance * damageMultiplier);
