@@ -1,3 +1,19 @@
+### 12.1.0
+
+#### Fix
+
+- Fix extended recipe provider
+
+#### Breaking Changes
+
+- Rename ArmorItem item set to ArmorItemSet
+- Rename DioRecipeProvider recipe provider to LibRecipeProvider
+
+#### New API Features
+
+- Add a fall damage reduction utility
+- Add walk on powdered snow utility
+
 ### 12.0.0
 
 #### New API Features

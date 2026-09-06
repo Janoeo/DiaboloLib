@@ -1,5 +1,7 @@
 package fr.alasdiablo.mods.lib;
 
+import fr.alasdiablo.mods.lib.event.FallDamageReductionEventHandler;
+import net.neoforged.neoforge.common.NeoForge;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -13,5 +15,7 @@ public class Lib {
     public static final String MOD_ID = "dio_lib";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public Lib(IEventBus modEventBus, ModContainer modContainer) {}
+    public Lib(IEventBus modEventBus, ModContainer modContainer) {
+        NeoForge.EVENT_BUS.addListener(FallDamageReductionEventHandler::onLivingFall);
+    }
 }

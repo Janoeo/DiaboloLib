@@ -8,7 +8,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
 import org.jetbrains.annotations.NotNull;
 
-public record ArmorItem(
+public record ArmorItemSet(
         DeferredItem<Item> helmet,
         DeferredItem<Item> chestplate,
         DeferredItem<Item> leggings,

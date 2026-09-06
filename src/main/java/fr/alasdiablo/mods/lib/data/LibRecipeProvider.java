@@ -1,7 +1,7 @@
 
 package fr.alasdiablo.mods.lib.data;
 
-import fr.alasdiablo.mods.lib.item.ArmorItem;
+import fr.alasdiablo.mods.lib.item.ArmorItemSet;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -40,7 +40,7 @@ import org.jetbrains.annotations.NotNull;
  * }</pre>
  */
 @SuppressWarnings({"unused"})
-public abstract class DioRecipeProvider extends RecipeProvider {
+public abstract class LibRecipeProvider extends RecipeProvider {
     private final String modId;
 
     /**
@@ -50,7 +50,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
      * @param registries The holder lookup provider for accessing game registries
      * @param output     The recipe output where generated recipes will be saved
      */
-    protected DioRecipeProvider(String modId, HolderLookup.Provider registries, RecipeOutput output) {
+    protected LibRecipeProvider(String modId, HolderLookup.Provider registries, RecipeOutput output) {
         super(registries, output);
         this.modId = modId;
     }
@@ -369,7 +369,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
                 .save(this.output);
     }
 
-    protected void armors(@NotNull ArmorItem armor, @NotNull TagKey<Item> material) {
+    protected void armors(@NotNull ArmorItemSet armor, @NotNull TagKey<Item> material) {
         ItemLike helmet = armor.helmet();
         ItemLike chestplate = armor.chestplate();
         ItemLike leggings = armor.leggings();
@@ -378,7 +378,7 @@ public abstract class DioRecipeProvider extends RecipeProvider {
         this.armors(helmet, chestplate, leggings, boots, material);
     }
 
-    protected void armors(@NotNull ArmorItem armor, @NotNull Item material) {
+    protected void armors(@NotNull ArmorItemSet armor, @NotNull Item material) {
         ItemLike helmet = armor.helmet();
         ItemLike chestplate = armor.chestplate();
         ItemLike leggings = armor.leggings();
